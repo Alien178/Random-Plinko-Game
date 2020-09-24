@@ -45,6 +45,9 @@ function setup() {
 
     plinkos.push(new Plinko(j, 375));
   }
+  
+  wallR = new Ground(805, height / 2, 10, height + 10);
+  wallL = new Ground(-5, height / 2, 10, height + 10);
 }
 
 
@@ -65,6 +68,9 @@ function draw() {
   text(" 200 ", 560, 550);
   text(" 200 ", 640, 550);
   text(" 200 ", 720, 550);
+  
+  wallR.display();
+  wallL.display();
 
   for (var i = 0; i < plinkos.length; i++) {
 
