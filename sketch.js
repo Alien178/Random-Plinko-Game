@@ -1,7 +1,7 @@
-var Engine = Matter.Engine,
-  World = Matter.World,
-  Events = Matter.Events,
-  Bodies = Matter.Bodies;
+const Engine = Matter.Engine;
+const World = Matter.World;
+const Events = Matter.Events;
+const Bodies = Matter.Bodies;
 
 var particles = [];
 var plinkos = [];
@@ -28,24 +28,24 @@ function setup() {
 
   for (var j = 75; j <= width; j = j + 50) {
 
-    plinkos.push(new Plinko(j, 75, 10));
+    plinkos.push(new Plinko(j, 75, 7.5));
   }
 
   for (var j = 50; j <= width - 10; j = j + 50) {
 
-    plinkos.push(new Plinko(j, 175, 5));
+    plinkos.push(new Plinko(j, 175, 10));
   }
 
   for (var j = 75; j <= width; j = j + 50) {
 
-    plinkos.push(new Plinko(j, 275, 10));
+    plinkos.push(new Plinko(j, 275, 7.5));
   }
 
   for (var j = 50; j <= width - 10; j = j + 50) {
 
-    plinkos.push(new Plinko(j, 375, 5));
+    plinkos.push(new Plinko(j, 375, 10));
   }
-  
+
   wallR = new Ground(805, height / 2, 10, height + 10);
   wallL = new Ground(-5, height / 2, 10, height + 10);
 }
@@ -68,9 +68,9 @@ function draw() {
   text(" 200 ", 560, 550);
   text(" 200 ", 640, 550);
   text(" 200 ", 720, 550);
-  
-  wallR.display();
+
   wallL.display();
+  wallR.display();
 
   for (var i = 0; i < plinkos.length; i++) {
 
